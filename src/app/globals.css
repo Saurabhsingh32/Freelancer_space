@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3eee4;
+  --foreground: #1a1714;
+  --muted: #6b635a;
+  --line: #ddd4c6;
+  --card: #fffaf3;
+  --accent: #18463d;
+  --accent-2: #c45c26;
+  --held: #8a5a12;
+  --held-bg: #f4e4c4;
+  --ok: #18463d;
+  --ok-bg: #dceae4;
+  --warn: #8a2e1f;
+  --warn-bg: #f3d8d2;
+  --info: #2c4a6e;
+  --info-bg: #dce6f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-fraunces);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+.display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.875rem;
+  font-weight: 550;
+  line-height: 1.2;
+  transition: opacity 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #f7f3ea;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--line);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--warn);
+  border: 1px solid color-mix(in srgb, var(--warn) 35%, var(--line));
+}
+
+.field {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--accent);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
